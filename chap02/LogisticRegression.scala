@@ -13,7 +13,7 @@ class LogisticRegression(
   {
       val xBeta = training * coefficients
       val expXBeta = exp(xBeta)
-      val cost = - sum((target :* xBeta) - log((expXBeta) + 1.0))
+      val cost = - sum((target :* xBeta) - log1p(expXBeta))
       val probs = sigmoid(xBeta)
       val grad = training.t * (probs - target)
       (cost, grad)
