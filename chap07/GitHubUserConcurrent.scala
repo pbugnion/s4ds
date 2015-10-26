@@ -12,10 +12,7 @@ object GitHubUserConcurrent {
 
   implicit val formats = DefaultFormats
 
-  case class User(
-    val id:Long,
-    val userName:String
-  )
+  case class User(id:Long, userName:String)
 
   def fetchUserFromUrl(url:String):Future[User] = {
     val response = Future { Source.fromURL(url).mkString }
@@ -41,7 +38,7 @@ object GitHubUserConcurrent {
     name2User.foreach { case(name, user) =>
       user.onComplete {
         case Success(u) => println(s" ** Extracted for $name: $u")
-        case Failure(e) => println(s" ** Error fetching user $name: $e")
+        case Failure(e) => println(s" ** Error fetching $name: $e")
       }
     }
 

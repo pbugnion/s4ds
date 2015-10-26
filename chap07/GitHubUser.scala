@@ -7,10 +7,7 @@ object GitHubUser {
 
   implicit val formats = DefaultFormats
 
-  case class User(
-    val id:Long,
-    val username:String
-  )
+  case class User(id:Long, userName:String)
 
   def fetchUserFromUrl(url:String):User = {
     val response = Source.fromURL(url).mkString
@@ -19,17 +16,23 @@ object GitHubUser {
   }
 
   def extractUser(obj:JValue):User = {
-    val o = obj.transformField {
-      case ("login", name) => ("username", name)
+    val transformedObject = obj.transformField {
+      case ("login", name) => ("userName", name)
     }
-    o.extract[User]
+    transformedObject.extract[User]
   }
 
   def main(args:Array[String]) {
-    val name = args(0)
-    val user = fetchUserFromUrl(s"https://api.github.com/users/$name")
+    // Extract username from argument list
+    val name = args.headOption.getOrElse { 
+      throw new IllegalArgumentException(
+        "Missing command line argument for user.")
+    }
+    
+    val user = fetchUserFromUrl(
+      s"https://api.github.com/users/$name")
 
-    println(s" ** Extracted for $name:")
+    println(s"** Extracted for $name:")
     println()
     println(user)
 
