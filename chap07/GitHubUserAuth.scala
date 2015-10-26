@@ -14,22 +14,25 @@ object GitHubUserAuth {
 
   implicit val formats = DefaultFormats
 
-  case class User(
-    val id:Long,
-    val username:String
-  )
+  case class User(id:Long, username:String)
 
-
-  def fetchUserFromUrl(url:String):Future[User] = {
-    val request = Http(url)
-    val token = "" // Your token here
-    request.header("Authentication", s"token $token")
-    val response = Future { request.asString.body }
-    val parsedResponse = response.map { r => parse(r) }
-    parsedResponse.flatMap(extractUser)
+  lazy val token:Option[String] = sys.env.get("GHTOKEN") orElse {
+    println("No token found: continuing without authentication")
+    None
   }
 
-  def extractUser(jsonResponse:JValue):Future[User] = Future {
+  def fetchUserFromUrl(url:String):Future[User] = {
+    val baseRequest = Http(url)
+    val request = token match {
+      case Some(t) => baseRequest.header("Authentication", s"token $token")
+      case None => baseRequest
+    }
+    val response = Future { request.asString.body }
+    val parsedResponse = response.map { r => parse(r) }
+    parsedResponse.map { extractUser }
+  }
+
+  def extractUser(jsonResponse:JValue):User = {
     val o = jsonResponse.transformField {
       case ("login", name) => ("username", name)
     }
