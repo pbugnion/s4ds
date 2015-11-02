@@ -20,6 +20,6 @@ or
 
 The following classes are runnable examples:
 
- - `Credentials.scala` attempts to read environment variables MONGOPASSWORD and MONGOUSER from the environment variables, and connect to a MongoDB server using SCRAM-SHA1.
+ - `Credentials.scala` attempts to read environment variables MONGOPASSWORD and MONGOUSER, and connect to a MongoDB server using SCRAM-SHA1.
  - `InsertUsers.scala` fetches the first 500 users from GitHub, and their repositories and inserts them into a MongoDB database called `"github"`. Requires the classes `User`, `Repo` and `GitHubUserIterator` to be present in the same package.
  - `RepoNumber` prints the average number of repositories of everyone in the database. 
