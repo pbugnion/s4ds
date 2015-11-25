@@ -1,5 +1,5 @@
 
-name := "spam_ig"
+name := "spam_filter"
 
 scalaVersion := "2.10.5"
 

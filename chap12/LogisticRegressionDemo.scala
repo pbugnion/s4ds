@@ -11,7 +11,7 @@ import org.apache.spark.sql.SaveMode
 
 case class LabelledDocument(fileName:String, text:String, category:String)
 
-object LRTest extends App {
+object LogisticRegressionDemo extends App {
 
   val conf = new SparkConf().setAppName("LrTest")
   val sc = new SparkContext(conf)
