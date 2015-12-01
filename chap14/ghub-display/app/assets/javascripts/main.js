@@ -33,26 +33,8 @@ define("d3.global", ["d3"], function(d3global) {
   d3 = d3global;
 });
 
-require(["jquery", "underscore", "bootstrap", "model", "events", "responseView"], 
-function($, _, bootstrap, model, events, responseView) {
-
-  $("#user-selection").change(function() {
-    var user = $("#user-selection").val() ;
-    console.log("Fetching information for " + user) ;
-    $("*").css({"cursor": "wait"}) ;
-    $.getJSON("/api/repos/" + user, function(data) {
-      model.exists = true ;
-      model.repos = data ;
-    }).fail(function() {
-      model.exists = false ;
-      model.repos = [] ;
-    }).always(function() {
-      model.ghubUser = user ;
-      $("*").css({"cursor": "initial"}) ;
-      events.trigger("model_updated") ;
-    });
-  }) ;
-
+require(["controller", "responseView"], 
+function(controller, responseView) {
+  controller.initialize();
   responseView.initialize() ;
-
 }) ;

@@ -8,12 +8,11 @@ function($, model, events, repoTable, repoGraph) {
 
   var failedResponseHtml = "<div class='col-md-12'>Not found</div>" ;
 
-
   function initialize() {
     events.on("model_updated", function() {
       if (model.exists) {
         $("#response").html(successfulResponseHtml) ;
-        repoTable.build(model, $("#response-table")) ;
+        repoTable.build(model, "#response-table") ;
         repoGraph.build(model, "#response-graph") ;
       }
       else {

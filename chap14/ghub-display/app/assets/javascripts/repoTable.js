@@ -18,13 +18,13 @@ define(["underscore"], function(_) {
     "</tbody>" +
     "</table>") ;
 
-  function build(model, div) {
+  function build(model, divName) {
     var tbody = "" ;
     _.each(model.repos, function(repo) {
       tbody += rowTemplate(repo) ;
     }) ;
     var table = repoTable({tbody: tbody}) ;
-    $(div).html(table) ;
+    $(divName).html(table) ;
   }
 
   return { "build": build } ;
