@@ -32,7 +32,7 @@ class Api extends Controller {
   def repos(login:String) = Action.async {
     val url = s"https://api.github.com/users/$login/repos"
     val request = WS.url(url).withHeaders("Content-Type" -> "application/json").get()
-    WS.url(url).get().map { r => 
+    request.map { r => 
       if (r.status == 200) {
         val reposOpt = Json.parse(r.body).validate[List[Repo]]
         reposOpt match {
