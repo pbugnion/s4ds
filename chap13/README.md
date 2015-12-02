@@ -1,11 +1,10 @@
 
 # Chapter 13
 
-This chapter explores the Play framework. 
+This chapter explores the Play framework. We build a web API, `ghub-display`, that provides 
+a JSON array describing a user's repositories.
 
-`ghub-display` is a web API and application built using the Play framework that
-provides the guiding thread for this chapter. You need to install 
-Typesafe Activator for it to work, using either 
+You need to install §Typesafe Activator for this API to work, using either 
 
     brew install typesafe-activator
 
