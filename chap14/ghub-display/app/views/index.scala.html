@@ -6,7 +6,7 @@
         <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
         <link href=@routes.Assets.versioned("lib/nvd3/nv.d3.css") rel="stylesheet" type="text/css">
-        @helper.requireJs(core = routes.Assets.versioned("lib/requirejs/require.js").url, module = routes.Assets.versioned("javascripts/main.js").url)
+        <script src=@routes.Assets.versioned("lib/requirejs/require.js").url data-main="/assets/javascripts/main.js"></script>
         <link rel="stylesheet" href=@routes.Assets.versioned("lib/bootstrap/css/bootstrap.css") type="text/css">
 
     <body>
