@@ -2,7 +2,7 @@
 import java.sql._
 
 trait SqlReader[T] {
-    def read(results:ResultSet, field:String):T
+  def read(results:ResultSet, field:String):T
 }
 
 object SqlReader {
