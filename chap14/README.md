@@ -13,7 +13,7 @@ The Play framework requires the Java 8 JDK. To verify which version of Java you 
 
     $ java -version
 
-If the first line reads "java version 1.8.x_xx", you are good to go. Otherwise, you will need to install Java 8. 
+If the first line reads "java version 1.8.x_xx", you are good to go. Otherwise, you will need to install Java 8. Refer to the preface for instructions.
 
 ## Installation
 
@@ -49,9 +49,11 @@ To run the application in production, start by creating a jar containing the app
 
     $ activator dist
 
-This will create a zip archive called FIXME with the application itself, its dependencies and a shell script to run it, in the directory FIXME.
+This will create a zip archive called `ghub-display-1.0-SNAPSHOT.zip` with the application itself, its dependencies and a shell script to run it, in the directory `target/universal/`.
 
-To run the application in production, just unzip the archive and run  the shell script `./ghub-display-1.0-SNAPSHOT/bin/ghub-display`. The application runs on port 9000 by default. This is unlikely to be what you want. To run it on port 80, the default port for web access, you can specify the port explicitly when starting the application:
+To run the application in production, just unzip the archive and run  the shell script `./ghub-display-1.0-SNAPSHOT/bin/ghub-display`. The application runs on port 9000 by default.
+
+It is likely that you want the application to listen to port 80, the default port for HTTP, rather than on port 9000. To run it on port 80, you can specify the port explicitly when starting the application:
 
     $ sudo ./ghub-display-1.0-SNAPSHOT/bin/ghub-display -Dhttp.port=80
 
@@ -61,7 +63,7 @@ Since 80 is a privileged port, you will need to run this with root access. Alter
     sudo apt-get install -y libapache2-mod-proxy-html libxml2-dev
     sudo a2enmod proxy proxy_ajp proxy_http rewrite deflate headers proxy_balancer proxy_connect proxy_html
 
-You can then tell Apache to forward connections to port 80 to port 9000 by inserting the following lines in `/etc/apache2/apache2.conf`:
+You can then tell Apache to forward connections to port 9000 by inserting the following lines in `/etc/apache2/apache2.conf`:
 
     <VirtualHost *:80>
         ProxyPreserveHost On
