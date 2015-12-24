@@ -10,7 +10,7 @@ The Play framework requires the Java 8 JDK. To verify which version of Java you 
 
     $ java -version
 
-If the first line reads "java version 1.8.x_xx", you are good to go. Otherwise, you will need to install Java 8.
+If the first line reads "java version 1.8.x_xx", you are good to go. Otherwise, you will need to install Java 8. Refer to the preface for instructions.
 
 ## Installation
 
