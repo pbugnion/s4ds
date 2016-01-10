@@ -7,8 +7,9 @@ import scala.util._
 
 object StockPriceDemo extends App {
 
-  def urlFor(stockSymbol:String) = 
-    s"http://dev.markitondemand.com/MODApis/Api/v2/Quote?symbol=${stockSymbol}"
+  def urlFor(stockSymbol:String) = (
+    "http://dev.markitondemand.com/MODApis/Api/v2/Quote?" +
+    s"symbol=${stockSymbol}")
 
   def fetchStockPrice(stockSymbol:String):Future[BigDecimal] = {
     val url = urlFor(stockSymbol)
