@@ -11,4 +11,4 @@
 ## Futures
 
  - `BlockDemo.scala`: simple program demonstrating how to block to await the completion of a future.
- - `StockPriceDemo.scala`: Simple command line application for fetching stock prices from the [Markit on demand]() API. Stock prices are fetched asynchronously to avoid blocking the user interface.
+ - `StockPriceDemo.scala`: Simple command line application for fetching stock prices from the [Markit on demand](http://dev.markitondemand.com/MODApis/) API. Stock prices are fetched asynchronously to avoid blocking the user interface.
