@@ -35,7 +35,7 @@ object BreezeDemo extends App {
       heights.toDenseMatrix.t
     ), weights)
     val leastSquaresCoefficients = leastSquaresResult.coefficients
-    val label = f"weight = ${leastSquaresCoefficients(0)}%.4f + ${leastSquaresCoefficients(1)}%.4f *height" 
+    val label = f"weight = ${leastSquaresCoefficients(0)}%.4f + ${leastSquaresCoefficients(1)}%.4f *height"
     println("Least squares result: ")
     println(label)
     println(s"residuals = ${leastSquaresResult.rSquared}")
@@ -77,10 +77,9 @@ object BreezeDemo extends App {
     plt += plot(data.heights, data.reportedHeights, '.', colorcode="black")
   }
 
-
+  // Run one of the following routines:
   //simplePlot
-  advancedScatterExample
+  //advancedScatterExample
   //scatterPlot
   //subplotExample
 }
-
