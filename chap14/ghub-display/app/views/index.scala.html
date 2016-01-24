@@ -2,38 +2,31 @@
 
 <html lang="en">
     <head>
-        <title>Github User display</title>
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
-        <link href=@routes.Assets.versioned("lib/nvd3/nv.d3.css") rel="stylesheet" type="text/css">
-        <script type="text/javascript" src=@routes.Assets.versioned("lib/requirejs/require.js").url data-main=@routes.Assets.versioned("javascripts/main.js").url>
-        </script>
-        <link rel="stylesheet" href=@routes.Assets.versioned("lib/bootstrap/css/bootstrap.css") type="text/css">
+      <title>Github User display</title>
+      <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+      <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+      <link href=@routes.Assets.versioned("lib/nvd3/nv.d3.css") rel="stylesheet" type="text/css">
+      <script type="text/javascript" src=@routes.Assets.versioned("lib/requirejs/require.js").url data-main=@routes.Assets.versioned("javascripts/main.js").url>
+      </script>
+      <link rel="stylesheet" href=@routes.Assets.versioned("lib/bootstrap/css/bootstrap.css") type="text/css">
+    </head>
 
     <body>
 		<div class="container">
 
-			<div class="row-fluid">
-				<div class="col-md-12">
-					<h1>Github user search</h1>
-				</div>
+			<div class="row">
+			  <h1>Github user search</h1>
 			</div>
 
-			<div class="row-fluid">
-				<div class="col-md-12">
-					<label>Github user: </label>
-					<input type="text" id="user-selection">
-					<span id="searching-span"></span>
-				</div>
+			<div class="row">
+		  	<label>Github user: </label>
+			  <input type="text" id="user-selection">
+				<span id="searching-span"></span>
+				<hr />
 			</div>
 
-			<div class="row-fluid">
-				<div class="col-md-12">
-					<hr />
-				</div>
-			</div>
+			<div id="response" class="row"></div>
 
-			<div id="response" class="row-fluid"></div>
 		</div>
     </body>
 </html>

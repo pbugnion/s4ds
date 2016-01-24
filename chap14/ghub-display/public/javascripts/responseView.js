@@ -1,8 +1,8 @@
 
-define(["jquery", "model", "events", "repoTable", "repoGraph"], 
+define(["jquery", "model", "events", "repoTable", "repoGraph"],
 function($, model, events, repoTable, repoGraph) {
 
-  var successfulResponseHtml = "" +
+  var successfulResponseHtml = 
     "<div class='col-md-6' id='response-table'></div>" +
     "<div class='col-md-6' id='response-graph'></div>" ;
 
