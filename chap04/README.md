@@ -1,7 +1,11 @@
 
 # Chapter 4: Parallel collections and futures
 
+This chapter introduces parallel collections and futures.
+
 ## Parallel collections
+
+Some of the code examples rely on the same height-weight data that was presented in chapter 2.
 
  - `LogisticRegression.scala`: an extension of the `LogisticRegression` class written in chapter 2 that also contains `predictProbabilitiesMany` and `classifyMany` methods for generating predictions on a test set.
  - `HWData.scala`: routines for loading the height-weight data from CSVs.
