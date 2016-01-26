@@ -11,11 +11,11 @@ You may want to add this line to your `.bashrc` file to avoid having to re-type 
 
 Each folder is a standalone application. The folders correspond to:
 
- - `single_threaded`: a single-threaded version of the application. This does not use Akka at all; its purpose is to demonstrate how one might build this in a single-threaded manner.
+ - `single_threaded`: a single-threaded version of the application. This does not use Akka at all; its purpose is to demonstrate how one might build the crawler in a single-threaded manner.
  - `hello_akka` builds a simple actor that just echoes the message it receives.
  - `hello_akka_case_classes` builds a simple actor that uses case classes to represent its messages.
  - `fetchers_alone` is a very simple program capable of querying the GitHub API for specific users, using several fetcher actors in parallel. The response is just printed to screen.
  - `fetchers_routing` is similar, but uses automatic routing to balance queries between the fetchers.
  - `all_workers` adds an actor to interpret the GitHub response and extract arrays of followers.
- - `ghub_crawler` adds functionality for managing a queue of users to be fetched. This is the first true crawler: any follower extracted from the response is automatically added to the queue of users to be fetched. The crawler would therefore crawl the follower graph ad-infinitum, if it weren't for the API rate limits.
+ - `ghub_crawler` adds functionality for managing a queue of users to be fetched. This is the first true crawler: any follower extracted from the response is automatically added to the queue of users to be fetched. The crawler would therefore crawl the entire follower graph, if it weren't for the API rate limits.
  - `ghub_crawler_fault_tolerant` adds lifecycle hooks that automatically write the state of the queue to a file when the queue manager dies.
