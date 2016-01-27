@@ -1,5 +1,5 @@
 
-# Chapter 14
+# Chapter 14: Visualization with D3 and the Play framework
 
 This chapter builds a web application using the Play framework and D3.
 
