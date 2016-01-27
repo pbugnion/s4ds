@@ -1,5 +1,5 @@
 
-# Chapter 13
+# Chapter 13: Web APIs with Play
 
 This chapter explores the Play framework. We build a web API, `ghub-display`, that provides
 a JSON array describing a user's repositories.
