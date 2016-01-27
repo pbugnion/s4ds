@@ -10,10 +10,10 @@ echo
 echo "Fetching data for chapter 10"
 echo
 
-curl --compressed 'data.scala4datascience.com/ling-spam.tar.gz' | tar xzf - -C chap10/data
+curl --compressed 'data.scala4datascience.com/ling-spam.tar.gz' | tar xzf - -C chap10
 
 echo
 echo "Fetching data for chapter 12"
 echo
 
-curl --compressed 'data.scala4datascience.com/ling-spam.tar.gz' | tar xzf - -C chap12/data
+curl --compressed 'data.scala4datascience.com/ling-spam.tar.gz' | tar xzf - -C chap12
